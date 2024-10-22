@@ -1,24 +1,25 @@
 code segment
 Assume cs:code ,DS:code ,ES:code ,SS:code
 
-command 	    equ	    00h
-stat	    equ            02h
-data	    equ	    04h   
 
-key                 equ            01h   
+command 	    equ	    00h    ; Command register for LCD
+stat	        equ     02h    ; Status register for checking LCD busy status
+data	        equ	    04h    ; Data register for LCD
 
-control          equ             1Fh
-porta             equ             19h     
+key             equ     01h    ; Input from key (or keypad)
 
-control_Dot     equ     1EH 
-portc           equ          1CH
-portR           equ          18H
-portg           equ         1AH
+control         equ     1Fh    ; Control port for output device
+porta           equ     19h    ; Output port A
+
+control_Dot     equ     1EH    ; Control for dot matrix display
+portc           equ     1CH    ; Output port C
+portR           equ     18H    ; Output port R
+portg           equ     1AH    ; Output port G
+
+org 1000h       ; Code segment starts at 1000h
 
 
 
-
-org 1000h   
 
 ;----------code----------    
 
